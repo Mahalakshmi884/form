@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form DOM Manipulation</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1 id="title">Forms</h1>
+    <p id="description">DOM Manipulation with Forms</p>
+    <div class="container">
+      <div class="formContainer">
+        <form action="#" id="form" class="form">
+          <div class="form-group">
+            <input
+              type="text"
+              id="first-name"
+              name="First Name"
+              placeholder="  "
+              required
+            />
+            <label for="firstName">First Name</label>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="  "
+              id="last-name"
+              name="Last Name"
+              required
+            />
+            <label for="lastName">Last Name</label>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="  "
+              id="address"
+              name="Address"
+              required
+            />
+            <label for="address">Address</label>
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              id="pincode"
+              placeholder="  "
+              pattern="/[0-9]{0-6}/"
+              name="Pincode"
+              required
+            />
+            <label for="Pincode">Pincode</label>
+          </div>
+          <div class="form-group select gender">
+            <label for="Gender">Gender</label>
+            <select id="gender" name="Gender">
+              <option value="">Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="  "
+              id="state"
+              name="State"
+              required
+            />
+            <label for="state">State</label>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="  "
+              id="country"
+              name="Country"
+              required
+            />
+            <label for="country">Country</label>
+          </div>
+          <div class="form-group select grocery">
+            <label for="grocery" title="must select two">Choice of items*</label>
+            <div class="row-checkBox">
+              <input
+                type="checkbox"
+                class="grocery"
+                name="grocery"
+                id="dairy"
+                value="dairy"
+              />
+              <label for="dairy">dairy</label>
+            </div>
+            <div class="row-checkBox">
+              <input
+                type="checkbox"
+                class="grocery"
+                name="grocery"
+                id="fruits"
+                value="fruits"
+              />
+              <label for="fruits">fruits</label>
+            </div>
+            <div class="row-checkBox">
+              <input
+                type="checkbox"
+                class="grocery"
+                name="grocery"
+                id="vegetables"
+                value="vegetables"
+              />
+              <label for="vegetables">vegetables</label>
+            </div>
+            <div class="row-checkBox">
+              <input
+                type="checkbox"
+                class="grocery"
+                name="grocery"
+                id="protein"
+                value="protein"
+              />
+              <label for="protein">protein</label>
+            </div>
+            <div class="row-checkBox">
+              <input
+                type="checkbox"
+                class="grocery"
+                name="grocery"
+                id="legumes"
+                value="legumes"
+              />
+              <label for="legumes">legumes</label>
+            </div>
+          </div>
+          <div class="form-group button">
+            <button type="submit" id="submit" class="btn btn-primary">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+      <div id="tableContainer">
+        <table id="table" class="table">
+          <thead>
+            <tr>
+              <th>First name</th>
+              <th>Last Name</th>
+              <th>Address</th>
+              <th>Pincode</th>
+              <th>Gender</th>
+              <th>State</th>
+              <th>Country</th>
+              <th>grocery</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color:black;
+}
+h1,
+p {
+  text-align: center;
+  color: white;
+  margin-bottom: 5px;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  place-items: center;
+  transition: 0.3s;
+}
+.formContainer {
+  width: 500px;
+  display: grid;
+  place-items: center;
+  border: 5px yellow;
+  border-radius: 5px;
+  user-select: none;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  gap: 15px;
+}
+.form-group {
+  position: relative;
+  height: 40px;
+  display: grid;
+  place-items: center;
+}
+label {
+  position: absolute;
+  left: 20px;
+  top: 8px;
+  font-weight: 500;
+  color: red;
+  transition: 0.3s;
+  pointer-events: none;
+}
+input,
+select {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 0 20px;
+  font-weight: 500;
+}
+input:not(:focus):valid + label,
+input:focus + label,
+input:hover + label {
+  top: -9px;
+  left: 12px;
+  background-color: blue;
+  padding: 0 5px;
+  border: solid blue;
+  color: #fff;
+  font-size: 11px;
+  border-width: 0 3px;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+  appearance: none;
+}
+.form-group.select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+.form-group.select.gender {
+  height: 25px;
+}
+.form-group.select.food {
+  height: 65px;
+}
+.form-group.select label {
+  position: static;
+  padding: 0 5px;
+  background-color: blue;
+  border: solid blue;
+  color: white;
+  font-size: 14px;
+  border-width: 0 3px;
+}
+.form-group.select select {
+  width: 225px;
+}
+.form-group.select select option:first-child {
+  color: navy;
+}
+.form-group.select input[type="checkbox"] {
+  scale: 1.2;
+}
+.form-group.select input[type="checkbox"] + label {
+  pointer-events: all;
+}
+button {
+  width: 100px;
+  height: 36px;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+button:hover {
+  scale: 1.1;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+#tableContainer {
+  place-self: center;
+  border: 1px solid navy;
+  border-radius: 5px;
+  color: #fff;
+  overflow: hidden;
+  display: none;
+}
+#tableContainer.active {
+  display: block;
+}
+table {
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.363);
+}
+@keyframes fade {
+  0% {
+    scale: 0.9;
+    transform-origin: left;
+    opacity: 0;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+tr {
+  transition: 0.3s;
+  padding: 5px;
+  text-align: left;
+  color: #fff;
+  animation: fade 0.3s linear;
+}
+th,
+td {
+  padding: 5px;
+}
+th {
+  text-align: center;
+}
+thead tr:first-child {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+tr:nth-child(2n) {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+tr:hover:not(:first-child) {
+  background-color: #ffffffc0;
+  color: #000;
+}
+@media (max-width: 992px) {
+  .container {
+    gap: 20px;
+  }
+  #tableContainer {
+    width: 400px;
+  }
+  th {
+    display: none;
+  }
+  td {
+    display: block;
+    font-size: 12px;
+    padding: 10px;
+  }
+  tr:hover {
+    background-color: #ffffffc0;
+    color: #000;
+  }
+  td:nth-child(1):before {
+    content: "First Name :-   ";
+  }
+  td:nth-child(2):before {
+    content: "Last Name :-   ";
+  }
+  td:nth-child(3):before {
+    content: "Address :-   ";
+  }
+  td:nth-child(4):before {
+    content: "Pincode :-   ";
+  }
+  td:nth-child(5):before {
+    content: "Gender :-   ";
+  }
+  td:nth-child(6):before {
+    content: "State :-   ";
+  }
+  td:nth-child(7):before {
+    content: "Country :-   ";
+  }
+  td:nth-child(8):before {
+    content: "grocery :-   ";
+  }
+}
+@media (max-width: 415px) {
+  .formContainer {
+    width: auto;
+    margin: 5px;
+  }
+  #tableContainer {
+    width: 95%;
+  }
+  .form-group.select select {
+    width: 200px;
+  }
+}
